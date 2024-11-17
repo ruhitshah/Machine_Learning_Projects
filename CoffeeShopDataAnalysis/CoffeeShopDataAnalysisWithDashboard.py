@@ -163,7 +163,7 @@ st.pyplot(fig)
 from pyngrok import ngrok
 
 # Replace 'your_authtoken_here' with your actual ngrok authtoken
-!ngrok config add-authtoken 2ofdquAADxEue4fIcfpRsKE13G9_4xGJihYKQ3AQQxCLKsYVa
+!ngrok config add-authtoken your_ngork_auth_token
 
 
 
