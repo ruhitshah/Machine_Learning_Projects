@@ -47,11 +47,11 @@ Ultralytics YOLOv8 Models
 python main.py
 model = YOLO('yolov8n.pt')  # nano model (fast, less accurate)
 ⚙️ Changing the Model
-# Examples:
-# model = YOLO('yolov8s.pt')  # small model
-# model = YOLO('yolov8m.pt')  # medium model
-📜 License
+## Examples:
+model = YOLO('yolov8s.pt')  # small model
+model = YOLO('yolov8m.pt')  # medium model
+## License
 This project is free to use for educational and research purposes.
-✏️ Author
+## Author
 Developed by Ruhit Shah
 Powered by Ultralytics YOLOv8 and OpenCV
