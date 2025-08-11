@@ -33,20 +33,21 @@ st.title("SMS Spam Detection")
 sms_text = st.text_area("Enter the SMS to check if it's spam or not:")
 
 # When the user submits the input
+# When the user submits the input
 if st.button("Classify"):
     # Preprocess the input text
-    sms_text = remove_punc(sms_text)
-    sms_text = remove_stopwords(sms_text)
-    sms_text = stem_words(sms_text)
+    sms_clean = remove_punc(sms_text)
+    sms_clean = remove_stopwords(sms_clean)
+    sms_clean = stem_words(sms_clean)
 
     # Vectorize the input text
-    sms_vec = vectorizer.transform([sms_text])
+    sms_vec = vectorizer.transform([sms_clean])
 
-    # Predict using the model
-    prediction = model.predict(sms_vec)
+    # Predict using the model and extract the first element of the returned array
+    prediction = model.predict(sms_vec)[0]
 
-    # Display the result
-    if prediction == 1:
+    # Display the result – handle both string ("spam") and numeric (1) labels
+    if prediction == "spam" or prediction == 1:
         st.subheader("This message is SPAM!")
     else:
         st.subheader("This message is NOT SPAM.")
